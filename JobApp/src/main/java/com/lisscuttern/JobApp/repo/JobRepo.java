@@ -11,12 +11,8 @@ import com.lisscuttern.JobApp.model.JobPost;
 @Repository
 public class JobRepo {
 
-    // arrayList to store store JobPost objects
     List<JobPost> jobs = new ArrayList<>();
 
-    // ****************************************************************************
-
-    // constructor->injecting objects into ArrayList defined above.
     public JobRepo() {
 
         // Java Developer Job Post

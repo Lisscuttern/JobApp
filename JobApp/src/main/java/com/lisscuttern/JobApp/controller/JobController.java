@@ -19,15 +19,21 @@ public class JobController {
     @Autowired
     private JobService service;
 
+    // ************************************************************************
+
     @RequestMapping({"/","/home"})
     public String home() {
         return "home";
     }
 
+    // ************************************************************************
+
     @RequestMapping("/addjob")
     public String addJob() {
         return "addjob";
     }
+
+    // ************************************************************************
 
     // controller method for getting all job posts
     @GetMapping("/viewalljobs")
@@ -38,12 +44,15 @@ public class JobController {
         return "viewalljobs";
     }
 
+    // ************************************************************************
+
     @PostMapping("/handleForm")
-    public String handleAddJobForm(JobPost jobPost,Model model) 
-    {
+    public String handleAddJobForm(JobPost jobPost,Model model) {
         model.addAttribute("jobPost", jobPost);
         service.addJobPost(jobPost);
+        //System.out.println(jobPost);
         return "success";
+
     }
 
 
